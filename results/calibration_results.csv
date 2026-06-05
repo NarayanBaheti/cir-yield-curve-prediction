@@ -1,0 +1,4 @@
+Method,kappa,theta,sigma,Feller_Value,Feller_Passed,In_Sample_R2,In_Sample_RMSE
+Time-Series OLS,-0.25481,-0.00529,0.04132,0.002697,True,-168.8884,0.166248
+Time-Series MLE,0.00105,1.95173,0.04257,0.004088,True,0.352,0.010267
+Cross-Sectional,0.165507,0.024389,0.001765,0.008073100446,True,0.9055,0.003921
