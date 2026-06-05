@@ -4,19 +4,19 @@ Predicting the entire Treasury Yield Curve using Cox-Ingersoll-Ross (CIR) stocha
 
 ## Highlights
 
-✅ **One-Factor CIR:** Closed-form yield curve reconstruction using analytical bond pricing equations.
+ **One-Factor CIR:** Closed-form yield curve reconstruction using analytical bond pricing equations.
 
-✅ **Two-Factor CIR:** State-space model separating level and slope dynamics dynamically.
+ **Two-Factor CIR:** State-space model separating level and slope dynamics dynamically.
 
-✅ **Kalman Filtering:** Exponentially Weighted Moving Average (EWMA) state-space filter to extract independent latent factors $x_t$ and $y_t$ from only the 3-Month yield.
+ **Kalman Filtering:** Exponentially Weighted Moving Average (EWMA) state-space filter to extract independent latent factors $x_t$ and $y_t$ from only the 3-Month yield.
 
-✅ **Yield Curve Reconstruction:** Core prediction challenge using strictly the 3-Month Treasury Yield (ZC025YR) as observable input.
+ **Yield Curve Reconstruction:** Core prediction challenge using strictly the 3-Month Treasury Yield (ZC025YR) as observable input.
 
-✅ **Cross-Sectional Calibration:** LM/L-BFGS-B parameter calibration minimizing squared yield errors.
+ **Cross-Sectional Calibration:** LM/L-BFGS-B parameter calibration minimizing squared yield errors.
 
-✅ **R2 > 0.85 Validation Performance:** Achieving out-of-sample $R^2 = 0.9102$ on validation data.
+ **R2 > 0.85 Validation Performance:** Achieving out-of-sample $R^2 = 0.9102$ on validation data.
 
-✅ **Out-of-Sample Backtesting:** Backtested on independent test split (6M to 2Y tenors) achieving $R^2 = 0.8905$.
+ **Out-of-Sample Backtesting:** Backtested on independent test split (6M to 2Y tenors) achieving $R^2 = 0.8905$.
 
 ---
 
@@ -153,6 +153,7 @@ cir-yield-curve-prediction/
 ├── LICENSE
 ├── requirements.txt
 ├── .gitignore
+├── Problem_statement.pdf
 │
 ├── data/
 │   ├── raw/
@@ -186,14 +187,11 @@ cir-yield-curve-prediction/
 │       └── daily_rmse.png
 │
 ├── results/
-│   ├── calibration_results.csv
-│   ├── maturity_metrics.csv
-│   ├── model_comparison.csv
-│   ├── predictions.csv
-│   └── backtesting_results.csv
-│
-└── report/
-    └── project_report.pdf
+   ├── calibration_results.csv
+   ├── maturity_metrics.csv
+   ├── model_comparison.csv
+   ├── predictions.csv
+   └── backtesting_results.csv
 ```
 
 ---
@@ -220,11 +218,11 @@ Then open `notebooks/CIR_Yield_Curve_Prediction.ipynb` and execute cells sequent
 
 ## Key Findings
 
-✅ **Stable parameters:** Cross-sectional calibration produced the most stable, physically-plausible parameters.
+ **Stable parameters:** Cross-sectional calibration produced the most stable, physically-plausible parameters.
 
-✅ **Slope tracking:** Decomposing rate shocks into level and slope stochastically improves intermediate and long-end yield fitting.
+ **Slope tracking:** Decomposing rate shocks into level and slope stochastically improves intermediate and long-end yield fitting.
 
-✅ **Robust out-of-sample fit:** The models satisfy the club review requirement by achieving out-of-sample $R^2 > 0.85$ on both validation ($R^2 = 0.9102$) and test ($R^2 = 0.8905$) datasets using **only 3M yield inputs**.
+ **Robust out-of-sample fit:** The models satisfy the club review requirement by achieving out-of-sample $R^2 > 0.85$ on both validation ($R^2 = 0.9102$) and test ($R^2 = 0.8905$) datasets using **only 3M yield inputs**.
 
 ---
 
